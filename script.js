@@ -115,3 +115,31 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+// Code for custom cursor
+
+document.addEventListener("mousemove", (e) => {
+  const trace = document.createElement("div");
+  trace.classList.add("cursor-trace");
+  trace.style.left = e.pageX + "px";
+  trace.style.top = e.pageY + "px";
+  document.body.appendChild(trace);
+ 
+  setTimeout(() => {
+  trace.remove();
+  }, 600);
+});
+
+document.addEventListener("mousedown", (e) => {
+  const ripple = document.createElement("div");
+  ripple.classList.add("click-ripple");
+  ripple.style.left = e.pageX + "px";
+  ripple.style.top = e.pageY + "px";
+  document.body.appendChild(ripple);
+ 
+  setTimeout(() => {
+  ripple.remove();
+  }, 500);
+  });
+ 
